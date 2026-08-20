@@ -1,0 +1,35 @@
+name: タスク
+description: 作業依頼・実装・制作。目的と完了条件を必ず書く
+labels: ["タスク"]
+body:
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 目的
+      description: なぜこの作業が必要か（背景・誰のためか）
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 作業内容
+      description: 何をするか。大きい場合はチェックリストで分割する
+      placeholder: |
+        - [ ] 〇〇を作成
+        - [ ] △△を確認
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: 何がどうなったらこのIssueを閉じてよいか（検証方法を含める）
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 期限
+      description: YYYY-MM-DD。未定なら「未定」と書く（空欄禁止）
+    validations:
+      required: true

@@ -1,0 +1,35 @@
+name: 相談・決定
+description: 判断が必要な議題。結論をコメントに残してから閉じる
+labels: ["相談"]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: 議題
+      description: 何を決めたいか、一文で
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      description: なぜ今この判断が必要か
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: 選択肢と推奨案
+      description: 案を並べるだけでなく、起票者の推奨案と理由を必ず書く
+      placeholder: |
+        - 案A: 〇〇（推奨。理由: …）
+        - 案B: △△
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: 決定期限
+      description: いつまでに決めないと困るか（YYYY-MM-DD）
+    validations:
+      required: true
